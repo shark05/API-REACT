@@ -1,0 +1,41 @@
+# Imagem de Origem
+FROM node:13-alpine
+
+# Nome do Mantenedor
+LABEL maintainer="Demis Mois"
+
+# Diretório de trabalho(é onde a aplicação ficará dentro do container).
+WORKDIR /app
+
+# Adicionando `/app/node_modules/.bin` para o $PATH
+ENV PATH /app/node_modules/.bin:$PATH
+
+# Instalando dependências da aplicação e armazenando em cache.
+COPY package.json /app/package.json
+
+# RUN npm install --silent
+# RUN npm install react-scripts@3.3.1 -g --silent
+RUN npm install react-scripts@1.1.1 -g
+RUN npm install cross-env -g
+RUN npm install classnames
+RUN npm install --save history
+RUN npm install marked@0.3.6
+RUN npm install prop-types@15.5.10
+RUN npm install react@16.3.0
+RUN npm install react-dom@16.3.0
+RUN npm install react-redux@5.0.7
+RUN npm install react-router@4.1.2
+RUN npm install react-router-dom@4.1.2
+RUN npm install react-router-redux@5.0.0-alpha.6
+RUN npm install react-transition-group@2.5.0
+RUN npm install redux@3.6.0
+RUN npm install redux-devtools-extension@2.13.2
+RUN npm install redux-form@7.4.2
+RUN npm install redux-logger@3.0.1
+RUN npm install redux-thunk@2.3.0
+RUN npm install superagent@3.8.2
+RUN npm install superagent-promise@1.1.0
+RUN npm install timeago.js@3.0.2
+
+# Inicializa a aplicação
+CMD ["npm", "start"]

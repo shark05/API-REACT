@@ -1,0 +1,14 @@
+docker
+.env
+
+_api/.git
+_api/.idea
+_api/vendor
+_api/*.ORIG
+
+_frontend/.git
+_frontend/.idea
+_frontend/node_modules
+_frontend/build
+_frontend/Dockerfile
+_frontend/README.md
