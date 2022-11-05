@@ -7,7 +7,7 @@ services:
 
   api:
     build:
-      context: ./api
+      context: .
       dockerfile: ./docker/server/Dockerfile
     container_name: '${API_NAME}-server'
     ports:
@@ -20,7 +20,7 @@ services:
 
   app:
     build:
-      context: ./frontend
+      context: ./_frontend
       dockerfile: ./Dockerfile
     container_name: '${APP_NAME}-server'
     ports:
