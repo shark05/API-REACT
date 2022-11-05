@@ -2,7 +2,7 @@
 
 api/.gitinore
 api/bin
-api/vendor
+
 frontend/.gitinore
 frontend/build
 frontend/node_modules
